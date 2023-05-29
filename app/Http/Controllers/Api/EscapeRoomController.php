@@ -33,7 +33,6 @@ class EscapeRoomController extends Controller
     public function show(EscapeRoom $escapeRoom): EscapeRoomResource
     {
         return new EscapeRoomResource($escapeRoom);
-        // return $escapeRoom->get(['title', 'description', 'note', 'max_participants']);
     }
 
     /**

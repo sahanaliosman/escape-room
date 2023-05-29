@@ -15,6 +15,8 @@ class TimeSlotResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'id' => $this->id,
+            'available_participants' => ($this->escapeRoom->max_participants - $this->participants),
             'participants' => $this->participants,
             'begin' => $this->begin,
             'end' => $this->end,
