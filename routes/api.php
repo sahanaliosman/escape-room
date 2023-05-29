@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\API\EscapeRoomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/auth/register', [AuthController::class, 'createUser']);
 Route::post('/auth/login', [AuthController::class, 'loginUser']);
 
-// Route::apiResource('escape-rooms', PostController::class)->middleware('auth:sanctum');
+Route::middleware('auth:sanctum')->group(function () {
+    Route::apiResource('escape-rooms', EscapeRoomController::class);
+    Route::get('escape-rooms/{escape_room}/time-slots', [EscapeRoomController::class, 'timeSlots']);
+});
+// Route::apiResource('escape-rooms', EscapeRoomController::class)->middleware('auth:sanctum');
