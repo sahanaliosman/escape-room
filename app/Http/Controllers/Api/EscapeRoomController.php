@@ -16,10 +16,7 @@ class EscapeRoomController extends Controller
      */
     public function index()
     {
-
-        //return EscapeRoomResource::collection(EscapeRoom::with('theme'));
         return EscapeRoomResource::collection(EscapeRoom::paginate(25));
-        //return EscapeRoom::with('theme')->get(['title', 'description', 'note', 'max_participants']);
     }
 
     /**
