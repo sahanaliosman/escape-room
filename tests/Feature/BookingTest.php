@@ -51,7 +51,7 @@ class BookingTest extends TestCase
                 'room_id' => 3,
                 'time_slot_id' => 7,
                 'booking_date' => "2023-07-13",
-                'participants' => "2"
+                'participants' => 2
             ]);
         $status = $response->assertStatus(200)->decodeResponseJson()['status'];
         $this->assertTrue($status);
