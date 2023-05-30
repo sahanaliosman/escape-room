@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class TimeSlotResource extends JsonResource
+class BookingResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,12 +15,12 @@ class TimeSlotResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'available_participants' => ($this->escapeRoom->max_participants - $this->participants),
+            'room_name' => $this->escapeRoom->name,
+            'user_name' => $this->user->name,
+            'time_range' => $this->timeSlot->begin."-".$this->timeSlot->end,
+            'booking_date' => $this->booking_date,
             'participants' => $this->participants,
-            'begin' => $this->begin,
-            'end' => $this->end,
-            'slot_number' => $this->slot_number
+            'birthday_discount' => $this->birthday_discount
         ];
     }
 }

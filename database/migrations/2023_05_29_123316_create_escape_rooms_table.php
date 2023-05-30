@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(EscapeRoomTheme::class)->index();
             $table->unsignedTinyInteger('max_participants'); // Max amount of participants
+            $table->string('name');
             $table->string('title')->nullable();
             $table->text('note')->nullable(); // Shown for any note.
             $table->text('description')->nullable(); // Game description

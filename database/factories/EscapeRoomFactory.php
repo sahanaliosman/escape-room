@@ -24,6 +24,7 @@ class EscapeRoomFactory extends Factory
         return [
             'escape_room_theme_id' => EscapeRoomTheme::factory(),
             'max_participants' => rand(1,10),
+            'name' => $this->faker->sentence,
             'title' => $this->faker->sentence,
             'description' => $this->faker->text(300),
             'note' => $this->faker->text(300),

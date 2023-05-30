@@ -15,6 +15,7 @@ class EscapeRoomResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
             'note' => $this->note,
@@ -38,10 +39,4 @@ class EscapeRoomResource extends JsonResource
         ];
     }
 
-    public function timeSlots(Request $request): array
-    {
-        return [
-            'id' => '$this'
-        ];
-    }
 }

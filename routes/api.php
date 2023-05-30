@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\API\EscapeRoomController;
+use App\Http\Controllers\API\BookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,6 @@ Route::post('/auth/login', [AuthController::class, 'loginUser']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('escape-rooms', EscapeRoomController::class);
     Route::get('escape-rooms/{escape_room}/time-slots', [EscapeRoomController::class, 'timeSlots']);
+
+    Route::apiResource('bookings', BookingController::class);
 });
-// Route::apiResource('escape-rooms', EscapeRoomController::class)->middleware('auth:sanctum');
