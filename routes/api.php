@@ -30,4 +30,3 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::apiResource('bookings', BookingController::class);
 });
-// Route::apiResource('escape-rooms', EscapeRoomController::class)->middleware('auth:sanctum');

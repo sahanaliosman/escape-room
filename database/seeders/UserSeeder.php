@@ -18,17 +18,20 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Ali Osman ŞAHAN',
                 'email' => 'sahanaliosman@gmail.com',
-                'password' => Hash::make('123456')
+                'password' => Hash::make('123456'),
+                'birthdate' => "1990-07-13"
             ],
             [
                 'name' => 'Sanctum User 1',
                 'email' => 'sanctum@laravel.com',
-                'password' => Hash::make('123456')
+                'password' => Hash::make('123456'),
+                'birthdate' => "1994-05-29"
             ],
             [
                 'name' => 'Sanctum User 2',
                 'email' => 'sanctum2@laravel.com',
-                'password' => Hash::make('123456')
+                'password' => Hash::make('123456'),
+                'birthdate' => "1998-04-01"
             ],
         ];
 

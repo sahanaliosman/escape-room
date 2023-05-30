@@ -11,7 +11,7 @@ class Booking extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['user_id', 'escape_room_id', 'time_slot_id', 'booking_date'];
+    protected $fillable = ['user_id', 'escape_room_id', 'time_slot_id', 'booking_date', 'birthday_discount', 'participants'];
 
     /**
      * Get the booking associated with the escaperoom.

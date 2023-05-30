@@ -26,7 +26,8 @@ class BookingStoreRequest extends FormRequest
         return [
             'room_id' => 'required|exists:escape_rooms,id',
             'time_slot_id' => 'required|exists:time_slots,id',
-            'booking_date' => 'required|date_format:d/m/Y'
+            'booking_date' => 'required|date_format:Y-m-d',
+            'participants' => 'required|integer'
         ];
     }
 
@@ -54,8 +55,11 @@ class BookingStoreRequest extends FormRequest
     {
         return [
             'room_id.required' => 'Room ID is required!',
+            'room_id.exists' => 'Room ID is not exists!',
             'time_slot_id.required' => 'Time slot ID is required!',
-            'booking_date.required' => 'Booking date is required!'
+            'time_slot_id.exists' => 'Time slot ID is not exists!',
+            'booking_date.required' => 'Booking date is required!',
+            'participants.required' => 'Participants is required!'
         ];
     }
 }

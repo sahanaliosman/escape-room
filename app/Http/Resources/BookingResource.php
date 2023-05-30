@@ -19,6 +19,7 @@ class BookingResource extends JsonResource
             'user_name' => $this->user->name,
             'time_range' => $this->timeSlot->begin."-".$this->timeSlot->end,
             'booking_date' => $this->booking_date,
+            'participants' => $this->participants,
             'birthday_discount' => $this->birthday_discount
         ];
     }

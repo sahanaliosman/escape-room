@@ -19,8 +19,9 @@ return new class extends Migration
             $table->foreignIdFor(EscapeRoom::class)->index();
             $table->foreignIdFor(User::class)->index();
             $table->foreignIdFor(TimeSlot::class)->index();
-            $table->timestamp('booking_date');
+            $table->dateTime('booking_date');
             $table->tinyInteger('birthday_discount')->nullable();
+            $table->unsignedTinyInteger('participants');
 
             $table->softDeletes();
             $table->timestamps();

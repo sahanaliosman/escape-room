@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\EscapeRoomResource;
 use App\Http\Resources\TimeSlotResource;
 use App\Models\EscapeRoom;
-use App\Models\TimeSlot;
-use Illuminate\Http\Request;
 
 class EscapeRoomController extends Controller
 {
@@ -20,35 +18,11 @@ class EscapeRoomController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      */
     public function show(EscapeRoom $escapeRoom): EscapeRoomResource
     {
         return new EscapeRoomResource($escapeRoom);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, EscapeRoom $escapeRoom)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(EscapeRoom $escapeRoom)
-    {
-        //
     }
 
     /**
