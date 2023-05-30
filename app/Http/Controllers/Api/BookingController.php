@@ -60,12 +60,15 @@ class BookingController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * @throws \Throwable
      */
     public function destroy(Booking $booking)
     {
-        $booking->delete();
+        if ($booking->deleteOrFail() === false) {
+            return response()->json(['message'=>'Delete Failed']);
+        }
 
-        return response()->json(null, 204);
+        return response()->json(['message'=>'Successfully Deleted']);
     }
 
     private function isTimeSlotAvailable($escapeRoom, $timeSlot, $booking_datetime, $participants){
